@@ -1,5 +1,6 @@
 package dominio;
 
+import dominio.Eleccion;
 import java.util.ArrayList;
 
 public class Papeleta {
@@ -13,8 +14,12 @@ public class Papeleta {
         return (this.listaPreferencias);
     }
 
-    public void eliminarCandidato (Candidato candidato) {
-        int votos = Eleccion.getPapeletas().size();
-
+    public void setListaPreferencias(ArrayList<Candidato> listaPreferencias) {
+        this.listaPreferencias = listaPreferencias;
     }
+
+    public void eliminarCandidato (Candidato candidato) {
+        listaPreferencias.remove(candidato);
+    }
+
 }
